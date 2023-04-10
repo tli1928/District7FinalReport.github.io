@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Import Vega, Vega-lite and Vega-embed-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+
+    <!-- Import plotly supported library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="template.css">
+
+    <title>DS4200 District 7 Group 9 Final Report</title>
+</head>
+
+<body>
+<!-- Customizing the navigation bar -->
+<nav id="mainNavbar" class="navbar navbar-light navbar-expand-md py-0  fixed-top">
+
+    <!-- Adding the College name to the navigation bar -->
+    <a href="https://www.khoury.northeastern.edu" class="navbar-brand"><img src=logo.png
+                                                                            style="width:180px;height:60px"/></a>
+
+    <!-- Adding navigation tab names to the navigation bar. This is done as an unordered list.
+    Each list element is a navigation bar element. For each, I added an <a></a> tag which will be used
+    to direct to the appropriate section on click. You can add new items incase you want to add a new section
+    in your webpage by simply copy-pasting one of the list items. Make sure to correctly link it to the section
+    that it corresponds to.-->
+    <div class="collapse navbar-collapse" id="navLinks">
+
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a href="#motivation" class="nav-link">Motivation</a>
+            </li>
+            <li class="nav-item">
+                <a href="#data" class="nav-link">Data</a>
+            </li>
+            <li class="nav-item">
+                <a href="#task" class="nav-link">Task Analysis</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#analysis" class="nav-link">Data Analysis </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#design" class="nav-link">Design Process</a>
+            </li>
+            <li class="nav-item">
+                <a href="#visualization" class="nav-link">Data Visualization(s)</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Section 1: Project title, group ID, group members names, and an optional project image goes here -->
+<section class="container-fluid px-0 py-0" style="margin-top:150px">
+    <div>
+        <h1 style="text-align:center; font-weight: bold;"> Group 9: District 7 </h1>
+        <h2 style="text-align:center;"> Claudia L., Emmett B., & Teng L. </h2>
+            <img style="display:block; margin-left:auto; margin-right:auto; width:50%" src="roxbury_image.jpg"
+                 alt="Optional project image">
+            <p style="text-align: center;">image extracted from BU Today</p>
+    </div>
+</section>
+
+
+<!-- Section 2: Motivation -->
+
+<section id="motivation" class="container-fluid px-0" style="margin-top:50px"></section>
+<div>
+    <h2 style="text-align:center; font-weight: bold;"> Motivation </h2>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">To
+        accomplish this goal, the project utilized Analyze Boston, a platform that provides comprehensive data on
+        various neighborhood demographics, including poverty rates, per capita income, labor force, school enrollment,
+        age distribution, and race. Specifically, the project focused on analyzing the subsets of poverty rates and per
+        capita income.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Using the collected data, the project team plans to create a series of comparative analytic visualizations that
+        will help to identify key areas of need in Roxbury and highlight opportunities for targeted interventions. The
+        hope is that these visualizations will not only raise awareness about the revitalization efforts in Roxbury but
+        also encourage stakeholders to take action towards supporting the community's revival process.</p>
+</div>
+</section>
+
+
+<!-- Section 3: Data -->
+<section id="data" class="container-fluid px-0" style="margin-top:50px"></section>
+<div>
+    <h2 style="text-align:center; font-weight: bold;"> Data </h2>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        The data collected for this project is diverse and includes both quantitative and qualitative data types. This
+        means that we were able to gain a comprehensive understanding of the challenges faced by the community of
+        Roxbury. </p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        The quantitative data in the dataset includes columns such as per capita income, poverty rate, and demographic
+        population numbers, which provide a numerical representation of the economic and social conditions of the area.
+        The qualitative data, such as the 311 call type column, provides insight into the specific issues and concerns
+        of the residents. </p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Fortunately, the data collected was relatively clean and required minimal cleaning, limited to some index
+        manipulation. This means that we were able to focus on analyzing the data rather than spending a significant
+        amount of time cleaning and preparing it. </p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Overall, the data dictionary provides a clear understanding of the dataset's columns and their respective data
+        types. By utilizing this information, we were able to create a detailed picture of the circumstances faced by
+        the community of Roxbury, which will help to inform future initiatives and support efforts towards
+        revitalization. </p>
+</div>
+</section>
+
+<!-- Section 4: Task Analysis -->
+<section id="task" class="container-fluid px-0" style="margin-top:50px"></section>
+<div>
+    <h2 style="text-align:center; font-weight: bold;"> Task Analysis </h2>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        The first analytic task involves comparing the per capita income of different demographic groups. This requires
+        a comparative analysis to identify patterns and differences in the data. In addition, a search task is needed to
+        find relevant data sources to gather the necessary information. Finally, the analyze task involves presenting
+        the findings in a clear and understandable way.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        The second analytic task involves comparing different poverty metrics between Roxbury and other neighborhoods.
+        This requires a comparative analysis to identify similarities and differences in the data. A search task is also
+        needed to find relevant data sources to gather the necessary information. Finally, the analyze task involves
+        presenting the findings in a clear and understandable way.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        The third analytic task involves analyzing the frequency of 311 calls across various neighborhoods. This
+        requires a comparative analysis to identify trends and patterns in the data. A search task is needed to find
+        relevant data sources to gather the necessary information. Finally, the analyze task involves presenting the
+        findings in a clear and understandable way.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        In all three tasks, the analytic task involves performing a comparative analysis to identify patterns,
+        similarities, and differences in the data. The search task involves looking up relevant data sources to gather
+        the necessary information, and the analyze task involves presenting the findings in a clear and understandable
+        way. These tasks highlight the importance of performing thorough analyses to gain insights and understanding
+        from data, and the need for clear communication of the findings to ensure their usefulness and impact.</p>
+
+</div>
+</section>
+
+<div style="text-align: center; margin-left:470px;">
+    <table>
+        <tr>
+            <th>Domain Task</th>
+            <th>Analytic Task</th>
+            <th>Search Task</th>
+            <th>Analyze Task</th>
+        </tr>
+        <tr>
+            <td>Compare the per capita income of different demographic groups.</td>
+            <td>Comparative Analysis</td>
+            <td>Lookup</td>
+            <td>Present</td>
+        </tr>
+        <tr>
+            <td>Compare different poverty metrics between Roxbury and other neighborhoods.</td>
+            <td>Comparative Analysis</td>
+            <td>Lookup</td>
+            <td>Present</td>
+        </tr>
+        <tr>
+            <td>Analyze the frequency of 311 calls across various neighborhoods.</td>
+            <td>Comparative Analysis</td>
+            <td>Lookup</td>
+            <td>Present</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Section 5: Data Analysis -->
+<section id="analysis" class="container-fluid px-0" style="margin-top:50px"></section>
+<div>
+    <h2 style="text-align:center; font-weight: bold;"> Data Analysis </h2>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        The data analysis conducted reveals that Roxbury is facing significant economic challenges compared to other
+        neighborhoods in Boston. The high poverty rate and lower per capita income in Roxbury indicate that many
+        individuals and families in this neighborhood are experiencing financial difficulties and struggling to make
+        ends meet. This situation can lead to a range of negative consequences, including limited access to healthcare,
+        education, healthy food, and other basic needs that are essential for well-being and a decent quality of
+        life.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Furthermore, poverty and income disparities can negatively impact the community's economic growth and
+        development. A high poverty rate can result in reduced spending power, lower tax revenue, and limited investment
+        in the local economy, making it challenging for businesses to thrive in the area. This, in turn, can lead to
+        fewer job opportunities and hinder economic growth.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Given the severity of the economic challenges in Roxbury, there is a pressing need for targeted interventions
+        and support to address poverty and income disparities. This can involve initiatives such as providing job
+        training and employment opportunities, improving access to affordable housing, healthcare, and education, and
+        increasing investment in the local economy. By addressing these challenges, Roxbury can achieve more equitable
+        economic growth, improve the well-being of its residents, and contribute to a more prosperous future for the
+        community as a whole.</p>
+</div>
+</section>
+
+
+<!-- Section 6: Design Process -->
+<section id="design" class="container-fluid px-0" style="margin-top:50px"></section>
+<div>
+    <h2 style="text-align:center; font-weight: bold;"> Design Process </h2>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        In order to support the revitalization efforts in District 7 and increase its exposure, we are planning to
+        create three primary visualizations. Our aim is to contribute to these efforts by providing insightful and
+        informative data visualizations. Our first proposed visualization is a Sankey diagram, which will depict the
+        relationship between racial demographics and average per capita income for each neighborhood in Boston, using
+        Plotly.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Our second visualization will consist of a series of small multiple bar charts created using Altair. These bar
+        charts will represent the frequency and types of specific 311 requests made in different districts of Boston.
+        This visualization will provide a clear and comprehensive overview of the nature of requests made, thereby
+        enabling better decision-making and resource allocation.</p>
+    <p style="text-align: center; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
+        Our final visualization will be a simple and straightforward grouped bar chart that will display the poverty
+        rates in each neighborhood. This visualization, created using Plotly, will enable the audience to easily
+        identify and compare poverty rates across neighborhoods, allowing for more informed discussions and policy
+        decisions. Overall, these visualizations aim to contribute to the revitalization process in District 7 and
+        enhance understanding of key socioeconomic factors across Boston neighborhoods.</p>
+</div>
+</section>
+
+
+<!-- Section 7: Data Visualization(s) -->
+<section id="visualization" class="container-fluid px-0" style="margin-top:50px"></section>
+<div>
+    <h2 style="text-align:center; font-weight: bold;"> Data Visualizations </h2>
+</div>
+
+<!-- Add a header for the first vis-->
+<p style="font-size:20px; font-weight: bold; text-align: center;">First Visualization</p>
+<p style="font-size:20px; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">The Sankey diagram we have created visualizes the
+    relationship between income, neighborhood, and demographics. By mapping income to neighborhood to demographic, the
+    diagram demonstrates how certain neighborhoods and demographics are marginalized. We chose to use a Sankey diagram
+    because it effectively encodes multiple variables related to the same inner variable, without requiring a confusing
+    dual axis. This type of visualization also allows for easy comparisons within a group, as it utilizes the length of
+    the bars for each node. Additionally, the Sankey diagram permits straightforward filtering of a specific
+    neighborhood, which is useful in our specific domain for users to focus on Roxbury's data. Overall, the Sankey
+    diagram is a highly visual way of showcasing the disparities within neighborhoods and their demographics,
+    highlighting the need for focused intervention to address these issues.</p>
+
+<!-- Div for first visualization with an ID vis1-->
+<div id="vis1" class="center">
+    <iframe src="sankey.html" width="100%" height="805"></iframe>
+</div>
+
+<!-- Add a header for the second vis-->
+<p style="font-size:20px; font-weight: bold;text-align: center;">Second Visualization</p>
+<p style="font-size:20px; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">The primary objective of this small multiple chart is to
+    provide a more comprehensive understanding of the challenges facing communities, which may not be captured by
+    traditional surveys. The chart will focus on issues such as needle pickup, pests, safety concerns in residential
+    areas, and utility-related concerns. These metrics can provide insights into the overall health of a community,
+    which may not be measured in larger-scale surveys, such as the census. Moreover, the chart enables us to compare the
+    metrics of other districts to those of District 7, our area of interest, facilitating better decision-making and
+    targeted interventions. By using this small multiple chart, we aim to capture a more nuanced understanding of the
+    challenges facing communities and identify areas where focused efforts are needed to improve the well-being of
+    residents.</p>
+
+<!-- Div for second visualization with an ID vis2-->
+<div id="vis2" class="center">
+    <script>
+        (function (vegaEmbed) {
+            var spec = {
+                "config": {
+                    "view": {"continuousWidth": 400, "continuousHeight": 300},
+                    "title": {"anchor": "middle", "color": "black", "font": "Times New Roman", "fontSize": 20}
+                },
+                "data": {"name": "data-36a8bbd10f87ba246d094a5fa49060de"},
+                "mark": "bar",
+                "encoding": {
+                    "color": {"field": "type_bin", "title": "Type of Call", "type": "nominal"},
+                    "facet": {"columns": 3, "field": "district", "title": "City Council District", "type": "ordinal"},
+                    "tooltip": {"field": "count", "type": "quantitative"},
+                    "x": {"field": "type_bin", "title": "Type of Call", "type": "nominal"},
+                    "y": {"field": "count", "title": "Number of Calls", "type": "quantitative"}
+                },
+                "title": "311 Calls by District in 2022",
+                "transform": [{"filter": "(datum.type_bin !== 'Other')"}],
+                "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+                "datasets": {
+                    "data-36a8bbd10f87ba246d094a5fa49060de": [{
+                        "type_bin": "Other",
+                        "count": 50526,
+                        "district": "2"
+                    }, {
+                        "type_bin": "Needle Pickup",
+                        "count": 2382,
+                        "district": "2"
+                    }, {
+                        "type_bin": "Dead Animals and Pests",
+                        "count": 1989,
+                        "district": "2"
+                    }, {
+                        "type_bin": "Safety Concerns",
+                        "count": 1266,
+                        "district": "2"
+                    }, {"type_bin": "Lack of Utilities", "count": 56, "district": "2"}, {
+                        "type_bin": "Other",
+                        "count": 22696,
+                        "district": "3"
+                    }, {"type_bin": "Needle Pickup", "count": 1075, "district": "3"}, {
+                        "type_bin": "Safety Concerns",
+                        "count": 1148,
+                        "district": "3"
+                    }, {
+                        "type_bin": "Dead Animals and Pests",
+                        "count": 1586,
+                        "district": "3"
+                    }, {"type_bin": "Lack of Utilities", "count": 48, "district": "3"}, {
+                        "type_bin": "Other",
+                        "count": 19057,
+                        "district": "4"
+                    }, {
+                        "type_bin": "Safety Concerns",
+                        "count": 1327,
+                        "district": "4"
+                    }, {
+                        "type_bin": "Dead Animals and Pests",
+                        "count": 897,
+                        "district": "4"
+                    }, {"type_bin": "Needle Pickup", "count": 121, "district": "4"}, {
+                        "type_bin": "Lack of Utilities",
+                        "count": 124,
+                        "district": "4"
+                    }, {"type_bin": "Other", "count": 22831, "district": "6"}, {
+                        "type_bin": "Dead Animals and Pests",
+                        "count": 1113,
+                        "district": "6"
+                    }, {"type_bin": "Safety Concerns", "count": 798, "district": "6"}, {
+                        "type_bin": "Needle Pickup",
+                        "count": 213,
+                        "district": "6"
+                    }, {"type_bin": "Lack of Utilities", "count": 39, "district": "6"}, {
+                        "type_bin": "Other",
+                        "count": 26796,
+                        "district": "7"
+                    }, {"type_bin": "Needle Pickup", "count": 1512, "district": "7"}, {
+                        "type_bin": "Safety Concerns",
+                        "count": 1435,
+                        "district": "7"
+                    }, {
+                        "type_bin": "Dead Animals and Pests",
+                        "count": 1556,
+                        "district": "7"
+                    }, {"type_bin": "Lack of Utilities", "count": 108, "district": "7"}, {
+                        "type_bin": "Other",
+                        "count": 22252,
+                        "district": "8"
+                    }, {
+                        "type_bin": "Dead Animals and Pests",
+                        "count": 1284,
+                        "district": "8"
+                    }, {"type_bin": "Safety Concerns", "count": 684, "district": "8"}, {
+                        "type_bin": "Needle Pickup",
+                        "count": 460,
+                        "district": "8"
+                    }, {"type_bin": "Lack of Utilities", "count": 15, "district": "8"}]
+                }
+            };
+            var embedOpt = {"mode": "vega-lite"};
+
+            function showError(el, error) {
+                el.innerHTML = ('<div class="error" style="color:red;">'
+                    + '<p>JavaScript Error: ' + error.message + '</p>'
+                    + "<p>This usually means there's a typo in your chart specification. "
+                    + "See the javascript console for the full traceback.</p>"
+                    + '</div>');
+                throw error;
+            }
+
+            const el = document.getElementById('vis2');
+            vegaEmbed("#vis2", spec, embedOpt)
+                .catch(error => showError(el, error));
+        })(vegaEmbed);
+    </script>
+
+</div>
+
+
+<!-- Add a header for the first vis-->
+<p style="font-size:20px; font-weight: bold; text-align: center;">Third Visualization</p>
+<p style="font-size:20px; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">The third visualization is a combined grouped bar chart and
+    line chart, aimed at providing insights into the poverty distribution and how poverty is distributed across
+    different age groups in Boston neighborhoods. The grouped bar chart displays the poverty rate for each neighborhood
+    and includes an additional bar that shows the percentage of individuals living in poverty in Boston as a whole,
+    facilitating easy comparisons between the poverty rates of individual neighborhoods and the citywide average. The
+    line chart provides a breakdown of the poverty distribution within each neighborhood across six age groups, allowing
+    for a more nuanced understanding of the economic challenges faced by different segments of the population in each
+    neighborhood. By identifying age groups that are particularly vulnerable to poverty in each neighborhood and
+    evaluating how poverty rates vary across different age groups in different neighborhoods, we can gain insights into
+    the factors that contribute to poverty and inform targeted interventions to address these challenges. Overall, this
+    visualization provides a clear and informative representation of poverty rates and poverty distribution across
+    different age groups in Boston neighborhoods.</p>
+
+<!-- Div for first visualization with an ID vis3-->
+<div id="vis3" class="center">
+    <iframe src="teng_plot.html" width="70%" height="805"></iframe>
+</div>
+
+
+</section>
+
+
+<footer style="background-color:#000000d0; height:50px; margin-top:100px;">
+    <p style="font-size:1em; color:#ffffffe5; text-align:center; font-weight:bold; margin-top:0px;"> This work was
+        supported in part by the Khoury College of Computer Sciences at Northeastern University.</p>
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script>
+    $(function () {
+        $(document).scroll(function () {
+            var $nav = $("#mainNavbar");
+            $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+    });
+</script>
+</body>
+
+</html>
